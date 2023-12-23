@@ -3,7 +3,7 @@ var fs = require('fs');
 let data;
 
 try {  
-    data = fs.readFileSync('test.txt', 'utf8');
+    data = fs.readFileSync('inputs-day1.txt', 'utf8');
     data = data.toString();    
 } catch(e) {
     console.log('Error:', e.stack);
@@ -135,27 +135,7 @@ for (let i = 0; i < input.length; i++) {
   let tmpRes = parseInt(`${resFront}` + `${resBack}`)
   res += tmpRes;
   
-  console.log(`tmpRes ${tmpRes}`)
   // calculate result
-
-
-  
-  console.log(`numFront ${numFront}`)
-  console.log(`numFrontPos ${numFrontPos}`)
-  console.log(`numBack ${numBack}`)
-  console.log(`numBackPos ${numBackPos}`)
-
-  console.log(`numTextualFront ${numTextualFront}`)
-  console.log(`numTextualFrontPos ${numTextualFrontPos}`)
-  console.log(`numTextualBack ${numTextualBack}`)
-  console.log(`numTextualBackPos ${numTextualBackPos}`)
-
-
-  console.log(`resFront ${resFront}`)
-  console.log(`resBack ${resBack}`)
-  console.log(sentence);
-
-  console.log('');
 }
 
 console.log(res);
