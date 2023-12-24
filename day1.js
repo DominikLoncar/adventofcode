@@ -84,7 +84,7 @@ for (let i = 0; i < input.length; i++) {
       numTextualBack = j+1; 
       numTextualBackPos = min;
     }
-  }
+  } // find num textual and their pos for both front and back
 
   
   if(numFrontPos === -1 || numTextualFrontPos === -1)
@@ -95,7 +95,7 @@ for (let i = 0; i < input.length; i++) {
     }
     else
     {
-      resFront = numFront
+      resFront = numFront;
     }
 
 
@@ -107,8 +107,11 @@ for (let i = 0; i < input.length; i++) {
     {
       resBack = numBack
     }
+
+    
   }
 
+  
   else
   {
     if(numFrontPos <= numTextualFrontPos )
@@ -129,13 +132,42 @@ for (let i = 0; i < input.length; i++) {
     {
       resBack = numTextualBack
     }
+
   }
 
 
   let tmpRes = parseInt(`${resFront}` + `${resBack}`)
+
+
+
+  if(numFrontPos === numBackPos && numFrontPos!== 0 && numBackPos !== 0)
+  {
+    tmpRes %= 10;
+  }
+
   res += tmpRes;
   
+  console.log(`tmpRes ${tmpRes}`)
   // calculate result
+
+
+  
+  console.log(`numFront ${numFront}`)
+  console.log(`numFrontPos ${numFrontPos}`)
+  console.log(`numBack ${numBack}`)
+  console.log(`numBackPos ${numBackPos}`)
+
+  console.log(`numTextualFront ${numTextualFront}`)
+  console.log(`numTextualFrontPos ${numTextualFrontPos}`)
+  console.log(`numTextualBack ${numTextualBack}`)
+  console.log(`numTextualBackPos ${numTextualBackPos}`)
+
+
+  console.log(`resFront ${resFront}`)
+  console.log(`resBack ${resBack}`)
+  console.log(sentence);
+
+  console.log('');
 }
 
 console.log(res);
