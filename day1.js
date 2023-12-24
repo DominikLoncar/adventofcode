@@ -36,6 +36,9 @@ for (let i = 0; i < input.length; i++) {
 
   let resFront = -1;
   let resBack = -1;
+  let resFrontPos = -1;
+  let resBackPos = -1;
+
   // res
 
   for (let j = 0; j < sentence.length; j++) {
@@ -92,20 +95,24 @@ for (let i = 0; i < input.length; i++) {
     if(numFrontPos <= numTextualFrontPos )
     {
       resFront = numTextualFront;
+      resFrontPos = numTextualFrontPos
     }
     else
     {
       resFront = numFront;
+      resFrontPos = numFrontPos;
     }
 
 
     if(numBackPos <= numTextualBackPos)
     {
       resBack = numTextualBack;
+      resBackPos = numTextualBackPos
     }
     else
     {
       resBack = numBack
+      resBackPos = numBackPos;
     }
 
     
@@ -117,20 +124,24 @@ for (let i = 0; i < input.length; i++) {
     if(numFrontPos <= numTextualFrontPos )
     {
       resFront = numFront;
+      resFrontPos = numFrontPos
     }
     else
     {
       resFront = numTextualFront
+      resFrontPos = numTextualFrontPos
     }
 
 
     if(numBackPos >= numTextualBackPos)
     {
       resBack = numBack;
+      resBackPos = numBackPos;
     }
     else
     {
       resBack = numTextualBack
+      resBackPos = numTextualBackPos
     }
 
   }
@@ -140,7 +151,7 @@ for (let i = 0; i < input.length; i++) {
 
 
 
-  if(numFrontPos === numBackPos && numFrontPos!== 0 && numBackPos !== 0)
+  if(resFrontPos === resBackPos && resFront !== 0 && resBack !== 0)
   {
     tmpRes %= 10;
   }
